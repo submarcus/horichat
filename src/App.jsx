@@ -13,10 +13,21 @@ function App() {
         return user || "maahlune"; // Fallback pro melhor canal xD
     };
 
+    // Extrair tema da URL
+    const getThemeFromURL = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const theme = urlParams.get("theme");
+        return theme || "1"; // Tema padrão
+    };
+
     useEffect(() => {
         if (clientRef.current) return;
 
         const channel = getChannelFromURL();
+        const theme = getThemeFromURL();
+
+        // Aplicar tema ao body
+        document.body.className = `theme-${theme}`;
 
         const client = new tmi.Client({
             connection: { secure: true, reconnect: true },

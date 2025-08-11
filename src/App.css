@@ -91,7 +91,7 @@ body {
     top: 89%;
 }
 .message:nth-child(14) {
-    top: 2%;
+    top: 4%;
 }
 .message:nth-child(15) {
     top: 96%;
@@ -150,29 +150,67 @@ body {
     }
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .message {
-        font-size: 14px;
-        padding: 8px 14px;
-        max-width: 90vw;
-        min-height: 32px;
-    }
+/* =============== TEMAS =============== */
 
-    .emote {
-        height: 24px;
-    }
+/* Tema 1 - Simples/Japonês (sem background) */
+.theme-1 .message {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
 }
 
-@media (max-width: 480px) {
-    .message {
-        font-size: 12px;
-        padding: 6px 12px;
-        max-width: 95vw;
-        min-height: 28px;
-    }
+.theme-1 .text {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 2px rgba(0, 0, 0, 1);
+}
 
-    .emote {
-        height: 20px;
-    }
+.theme-1 .username {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 2px rgba(0, 0, 0, 1);
+}
+
+/* Tema 2 */
+.theme-2 .message {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.theme-2 .text {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 2px rgba(0, 0, 0, 1);
+}
+
+.theme-2 .username {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 2px rgba(0, 0, 0, 1);
+}
+
+/* Tema 3 - Matrix/Retro Terminal */
+.theme-3 .message {
+    background: rgba(0, 20, 0, 0.95);
+    border: 1px solid #00ff00;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3), inset 0 0 10px rgba(0, 255, 0, 0.1);
+    font-family: "Courier New", monospace;
+    backdrop-filter: none;
+    animation: slideLeft 15s linear forwards;
+}
+
+.theme-3 .text {
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00, 0 0 2px #00ff00;
+    font-weight: normal;
+}
+
+.theme-3 .username {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.theme-3 .message::before {
+    content: "> ";
+    color: #00ff00;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ff00;
 }
