@@ -90,8 +90,8 @@ function App() {
     return (
         <div className="chat-container">
             <div className="chat-overlay">
-                {messages.map((msg) => (
-                    <div key={msg.id} className="message">
+                {messages.map((msg, index) => (
+                    <div key={msg.id} className="message" style={{ top: `${5 + index * 7}%` }}>
                         <span className="username" style={{ color: msg.color }}>
                             {msg.username}:
                         </span>
